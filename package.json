@@ -7,10 +7,8 @@
     "node": "18.x"
   },
   "scripts": {
-    "beautiful": "prettier --write \"src/**/*.js\"",
-    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "dev": "nodemon --inpsect src/index.js"
   },
   "keywords": [
     "f8",
