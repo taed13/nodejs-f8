@@ -7,8 +7,8 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
-    "dev": "nodemon --inpsect src/index.js"
+    "start": "nodemon index.js",
+    "dev": "nodemon --inpsect index.js"
   },
   "keywords": [
     "f8",

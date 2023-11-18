@@ -1,6 +1,7 @@
-const route = require("./routes");
+const route = require("./src/routes");
+
 // Connect to DB
-const db = require("./config/db");
+const db = require("./src/config/db");
 db.connect();
 
 const path = require("path");
@@ -11,7 +12,7 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "./src/public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -27,7 +28,7 @@ app.engine(
 );
 
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+app.set("views", path.join(__dirname, "./src/resources/views"));
 
 // Routes init
 route(app);
