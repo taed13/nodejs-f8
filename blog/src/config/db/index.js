@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 async function connect() {
   try {
     await mongoose.connect(
-      "mongodb+srv://tiendatpot:gSa6usEAWhlMHdDG@cluster0.fgfmbee.mongodb.net/?retryWrites=true&w=majority/f8_education_dev",
+      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
