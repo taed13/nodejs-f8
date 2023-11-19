@@ -14,6 +14,23 @@ class CourseController {
         res.status(404).json({ err: "NOT FOUND" });
       });
   }
+
+  // [GET] /courses/create
+  create(req, res) {
+    res.render("courses/create");
+  }
+
+  // [POST] /courses/store
+  store(req, res, next) {
+    // res.json(req.body);
+    const formData = req.body;
+    formData.image = `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`;
+    const course = new Course(formData);
+    course
+      .save()
+      .then(() => res.redirect("/"))
+      .catch((err) => {});
+  }
 }
 
 module.exports = new CourseController();
