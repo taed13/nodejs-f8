@@ -96,7 +96,7 @@
   button.data('id'); }); btnDeleteCourse.onclick = function(){ deleteForm.action
   = '/courses/' + courseId + '/force?_method=DELETE'; deleteForm.submit(); }
   restoreBtn.click(function(e){ e.preventDefault(); var courseId =
-  $(this).data('id'); restoreForm.action = '/courses/' + courseId +
+  this.dataset.id; restoreForm.action = '/courses/' + courseId +
   '/restore?_method=PATCH'; restoreForm.submit(); }) });
 
 </script>
