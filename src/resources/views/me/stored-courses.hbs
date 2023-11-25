@@ -26,7 +26,8 @@
       </select>
 
       <button
-        class="btn btn-primary btn-sm check-all-submit-btn disabled"
+        class="btn btn-primary btn-sm check-all-submit-btn"
+        disabled
       >EXECUTE</button>
     </div>
 
@@ -127,7 +128,7 @@
   document.getElementById('btn-delete-course'); var checkboxAll =
   $('#checkbox-all'); var courseItemCheckbox = $('input[name="courseIds[]"]');
   var checkAllSubmitBtn = $('.check-all-submit-btn'); var containerForm =
-  document.forms['container-form'];
+  $('form[name="container-form"]');
   $('#delete-course-modal').on('show.bs.modal', function(event){ var button =
   $(event.relatedTarget); courseId = button.data('id'); });
   btnDeleteCourse.onclick = function(){ deleteForm.action = '/courses/' +
@@ -137,11 +138,9 @@
   }); courseItemCheckbox.change(function(){ var isCheckedAll =
   courseItemCheckbox.length === $('input[name="courseIds[]:checked"]').length;
   checkboxAll.prop('checked', isCheckedAll); renderCheckAllSubmitBtn(); });
-  checkAllSubmitBtn.on('submit', function(e) { var isSubmittable =
-  $(this).hasClass('disabled'); if (isSubmittable) { e.preventDefault(); } })
   function renderCheckAllSubmitBtn() { var checkedCount =
   $('input[name="courseIds[]:checked"]').length; if (checkedCount) {
-  checkAllSubmitBtn.removeClass('disabled'); } else {
-  checkAllSubmitBtn.addClass('disabled'); } } });
+  checkAllSubmitBtn.attr('disabled'); } else {
+  checkAllSubmitBtn.attr('disabled'); } } });
 
 </script>
