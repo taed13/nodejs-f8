@@ -1,4 +1,5 @@
 node_modules/
-blog/src/public/css/
+src/public/css/
 package-lock.json
 .env
+src/public/vendor

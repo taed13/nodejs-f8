@@ -1,7 +1,9 @@
 const route = require("./src/routes");
 // Connect to DB
 const db = require("./src/config/db");
+
 db.connect();
+///sth change
 
 const path = require("path");
 
